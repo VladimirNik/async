@@ -21,6 +21,12 @@ libraryDependencies += "junit" % "junit-dep" % "4.10" % "test"
 
 libraryDependencies += "com.novocode" % "junit-interface" % "0.10" % "test"
 
+autoCompilerPlugins := true
+
+libraryDependencies in ThisBuild += compilerPlugin("test.org" %% "printplugin" % "1.0")
+
+scalacOptions in ThisBuild += "-P:printplugin:oversrc"
+
 testOptions += Tests.Argument(TestFrameworks.JUnit, "-q", "-v", "-s")
 
 parallelExecution in Global := false
