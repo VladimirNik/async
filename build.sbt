@@ -1,4 +1,5 @@
-scalaVersion := "2.10.3-RC1"
+//scalaVersion := "2.10.3-RC1"
+scalaVersion := "2.10.2"
 
 // Uncomment to test with a locally built copy of Scala.
 // scalaHome := Some(file("/code/scala2/build/pack"))
@@ -23,7 +24,7 @@ libraryDependencies += "com.novocode" % "junit-interface" % "0.10" % "test"
 
 autoCompilerPlugins := true
 
-libraryDependencies in ThisBuild += compilerPlugin("test.org" %% "printplugin" % "1.0")
+libraryDependencies in ThisBuild += compilerPlugin("org.scala-lang.plugins" %% "printplugin" % "0.2.0")
 
 scalacOptions in ThisBuild += "-P:printplugin:oversrc"
 
